@@ -1,0 +1,97 @@
+.Card {
+	flex-direction: column;
+	width: 100%;
+
+	&__Image {
+		max-width: 100%;
+		margin: 0 auto;
+
+		img {
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__Body {
+		flex-direction: column;
+		width: 100%;
+
+		&__Title {
+			a h1:hover {
+				transition: 0.3s;
+				opacity: 0.8;
+			}
+		}
+
+		&__Popularity {
+			width: 80%;
+
+			.progress {
+				overflow: hidden;
+				height: 0.5rem;
+				background: $light-color;
+				border-radius: 5px;
+
+				div {
+					height: 100%;
+					background: rgba($secondary-color, $alpha: 0.85);
+				}
+			}
+		}
+
+		&__Genres {
+			text-transform: capitalize;
+			padding-bottom: 1rem;
+
+			.badge1,
+			.badge2 {
+				span {
+					padding: 0.25rem 1rem;
+					background: rgba($spotify-color, $alpha: 0.85);
+					border-radius: 100px;
+					font-size: 1rem;
+				}
+			}
+		}
+
+		&__Related {
+			width: 100%;
+
+			.RelatedArtists {
+				width: 100%;
+
+				&__Body {
+					justify-content: center;
+				}
+
+				&__Item {
+					color: rgba($primary-color, $alpha: 0.85);
+					margin: 0 0.5rem;
+					font-size: 1.1rem;
+				}
+			}
+		}
+	}
+
+	.bottom-line {
+		width: 100%;
+		margin-top: 0.5rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.Card {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 1rem 0;
+
+		&__Image {
+			min-width: 300px;
+		}
+
+		&__Body {
+			width: 100%;
+			margin-left: 2rem;
+		}
+	}
+}

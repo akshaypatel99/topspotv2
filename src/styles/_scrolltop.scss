@@ -1,0 +1,34 @@
+.ScrollTop {
+	position: fixed;
+	right: 45px;
+	bottom: 20px;
+	font-size: 2rem;
+	z-index: 1000;
+	cursor: pointer;
+	animation: fadeIn 0.3s;
+	transition: opacity 0.3s;
+	opacity: 0.5;
+	border: none;
+	background-color: transparent;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.5;
+	}
+}
+
+@media (max-width: 500px) {
+	.ScrollTop {
+		right: 20px;
+		bottom: 20px;
+		font-size: 1.5rem;
+	}
+}

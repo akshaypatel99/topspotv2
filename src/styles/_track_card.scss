@@ -1,0 +1,53 @@
+.TrackCard {
+	flex-direction: column;
+	width: 100%;
+
+	&__Media {
+		iframe {
+			display: inline-block;
+			background: url(../images/spinner.svg) center center no-repeat;
+		}
+	}
+
+	&__Body {
+		flex-direction: column;
+
+		&__Title {
+			width: 100%;
+			flex-direction: column;
+			padding-bottom: 1.5rem;
+
+			.bottom-line-short {
+				margin: 1rem auto;
+			}
+		}
+
+		&__Features {
+			width: 80%;
+
+			.progress {
+				overflow: hidden;
+				margin: 0.5rem auto;
+				height: 0.5rem;
+				background: $medium-light-color;
+				border-radius: 5px;
+				margin-bottom: 0.6rem;
+
+				div {
+					height: 100%;
+					background: rgba($primary-color, $alpha: 0.85);
+				}
+			}
+		}
+	}
+
+	.bottom-line {
+		width: 100%;
+		margin-top: 0.5rem;
+	}
+
+	&:hover .bottom-line-short {
+		transition: 0.3s;
+		background: $primary-color;
+	}
+}

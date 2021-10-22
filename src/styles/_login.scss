@@ -1,0 +1,25 @@
+.Login {
+	flex-direction: column;
+	justify-content: space-evenly;
+	text-align: center;
+	height: 92.5vh;
+	transition: all 0.3s;
+
+	&__Title {
+		h1 {
+			font-size: 5rem;
+
+			span {
+				color: $primary-color;
+			}
+		}
+	}
+
+	&__Link {
+		button {
+			text-transform: uppercase;
+			padding: 0.5rem 3rem;
+			color: $dark-color;
+		}
+	}
+}
