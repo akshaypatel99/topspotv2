@@ -2,13 +2,13 @@ import { useContext } from 'react';
 import RelatedArtists from './RelatedArtists';
 import ProgressBar from './ProgressBar';
 import { motion } from 'framer-motion';
-import { cardVariants } from '../helpers/animate';
+import { cardVariants, genreVariants } from '../helpers/animate';
 import {
 	IntersectionObserver,
 	IntersectionContext,
 } from './IntersectionObserver';
 
-const Card = ({
+function Card({
 	number,
 	id,
 	name,
@@ -17,7 +17,7 @@ const Card = ({
 	popularity,
 	genre1,
 	genre2,
-}) => {
+}) {
 	const { inView } = useContext(IntersectionContext);
 
 	return (
@@ -51,12 +51,16 @@ const Card = ({
 						<h4>Genres: </h4>
 						{genre1 && (
 							<div className='badge1 my-1'>
-								<span>{genre1}</span>
+								<motion.span variants={genreVariants} whileHover='hover'>
+									{genre1}
+								</motion.span>
 							</div>
 						)}
 						{genre2 && (
 							<div className='badge2'>
-								<span>{genre2}</span>
+								<motion.span variants={genreVariants} whileHover='hover'>
+									{genre2}
+								</motion.span>
 							</div>
 						)}
 					</div>
@@ -68,6 +72,6 @@ const Card = ({
 			<div className='bottom-line'></div>
 		</motion.section>
 	);
-};
+}
 
 export default Card;

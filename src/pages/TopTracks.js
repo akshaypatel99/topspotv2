@@ -2,23 +2,21 @@ import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import useUser from '../helpers/useUser';
-import { fetchWithToken } from '../helpers/spotify';
-import { savePlaylist } from '../helpers/createPlaylist';
-import { TOP_TRACKS_ENDPOINT } from '../constants/endpoints';
-import { sortTopTracks, filterTrackUri } from '../helpers/sortData';
-import TrackCard from '../components/TrackCard';
-import Loader from '../components/Loader';
-import NavBar from '../components/NavBar';
-import ScrollTopArrow from '../components/ScrollTopArrow';
 import { motion } from 'framer-motion';
+import { TOP_TRACKS_ENDPOINT } from '../constants/endpoints';
+import { fetchWithToken, savePlaylist } from '../helpers/spotify';
+import { sortTopTracks, filterTrackUri } from '../helpers/sortData';
 import { containerVariants } from '../helpers/animate';
-import Table from '../components/Table';
-import TimeRange from '../components/TimeRange';
 import { IntersectionObserver } from '../components/IntersectionObserver';
-
+import NavBar from '../components/NavBar';
+import Loader from '../components/Loader';
+import TimeRange from '../components/TimeRange';
+import TrackCard from '../components/TrackCard';
+import Table from '../components/Table';
+import ScrollTopArrow from '../components/ScrollTopArrow';
 import {
-	RiListOrdered,
 	RiAddCircleFill,
+	RiListOrdered,
 	RiPlayCircleLine,
 	RiMvLine,
 } from 'react-icons/ri';
@@ -39,7 +37,6 @@ function TopTracks() {
 	} = useQuery(['top_tracks', spotifyUrl], () => fetchWithToken(spotifyUrl), {
 		enabled: !!timeRange,
 	});
-	console.log('top_tracks', tracks);
 
 	useEffect(() => {
 		if (error) {

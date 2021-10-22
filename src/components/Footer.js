@@ -1,7 +1,6 @@
-import React from 'react';
 import { RiGithubFill } from 'react-icons/ri';
 
-const Footer = () => {
+function Footer() {
 	return (
 		<div className='Footer flex center py-1'>
 			<a
@@ -13,6 +12,6 @@ const Footer = () => {
 			</a>
 		</div>
 	);
-};
+}
 
 export default Footer;

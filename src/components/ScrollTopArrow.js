@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BiArrowToTop } from 'react-icons/bi';
 
-const ScrollTopArrow = () => {
+function ScrollTopArrow() {
 	const [showScroll, setShowScroll] = useState(false);
 
 	const checkScrollTop = () => {
@@ -23,6 +23,6 @@ const ScrollTopArrow = () => {
 			<BiArrowToTop size='32px' />
 		</button>
 	);
-};
+}
 
 export default ScrollTopArrow;

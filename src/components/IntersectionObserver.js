@@ -17,7 +17,7 @@ export const IntersectionObserver = ({
 
 	useEffect(() => {
 		const inViewNow = intersection && intersection.intersectionRatio > 0;
-		console.log(inViewNow);
+
 		if (inViewNow) {
 			return setInView(inViewNow);
 		} else if (reset) {

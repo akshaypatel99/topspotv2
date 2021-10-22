@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import TrackFeatures from './TrackFeatures';
 import { motion } from 'framer-motion';
 import { cardVariants } from '../helpers/animate';
 import { IntersectionContext } from './IntersectionObserver';
+import TrackFeatures from './TrackFeatures';
 
-const TrackCard = ({ number, id, name, artist, image, uri, showMedia }) => {
+function TrackCard({ number, id, name, artist, image, uri, showMedia }) {
 	const { inView } = useContext(IntersectionContext);
 
 	return (
@@ -50,6 +50,6 @@ const TrackCard = ({ number, id, name, artist, image, uri, showMedia }) => {
 			<div className='bottom-line'></div>
 		</motion.section>
 	);
-};
+}
 
 export default TrackCard;

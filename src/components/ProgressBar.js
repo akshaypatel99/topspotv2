@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { IntersectionContext } from './IntersectionObserver';
 
-const ProgressBar = ({ title, width }) => {
+function ProgressBar({ title, width }) {
 	const { inView } = useContext(IntersectionContext);
 
 	return (
@@ -17,6 +17,6 @@ const ProgressBar = ({ title, width }) => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default ProgressBar;

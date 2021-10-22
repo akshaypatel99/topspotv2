@@ -1,10 +1,10 @@
 import { useQuery } from 'react-query';
 import { fetchWithToken } from '../helpers/spotify';
 import { TRACK_FEATURES_ENDPOINT } from '../constants/endpoints';
-import ProgressBar from './ProgressBar';
 import { IntersectionObserver } from './IntersectionObserver';
+import ProgressBar from './ProgressBar';
 
-const TrackFeatures = ({ id }) => {
+function TrackFeatures({ id }) {
 	let spotifyUrl = `${TRACK_FEATURES_ENDPOINT}/${id}`;
 
 	const { data: features, status } = useQuery(
@@ -34,6 +34,6 @@ const TrackFeatures = ({ id }) => {
 			)}
 		</div>
 	);
-};
+}
 
 export default TrackFeatures;

@@ -89,7 +89,7 @@ export const linkVariants = {
 
 export const hoverVariants = {
 	hover: {
-		scale: 1.05,
+		scale: 1.1,
 		transition: {
 			type: 'easeOutQuad',
 			duration: 0.2,
@@ -97,34 +97,46 @@ export const hoverVariants = {
 	},
 };
 
-export const slideFromLeftVariants = {
+export const buttonVariants = {
 	hidden: {
-		x: '-20vw',
-		opacity: 0,
+		backgroundColor: 'rgba(201,18,120,0.85)',
 	},
 	visible: {
-		x: ['-20vw', '2vw', '0vw'],
-		opacity: 1,
+		backgroundColor: 'rgba(201,18,120,0.85)',
+	},
+	active: {
+		backgroundColor: 'rgba(29,185,84,0.85)',
 		transition: {
-			type: 'easeOut',
-			delay: 1,
-			duration: 0.75,
+			duration: 1,
+		},
+	},
+	hover: {
+		backgroundColor: 'rgba(29,185,84,0.85)',
+		transition: {
+			duration: 1,
 		},
 	},
 };
 
-export const slideFromRightVariants = {
+export const genreVariants = {
 	hidden: {
-		x: '20vw',
-		opacity: 0,
+		backgroundColor: 'rgba(29,185,84,0.85)',
 	},
 	visible: {
-		x: ['20vw', '-2vw', '0vw'],
-		opacity: 1,
+		backgroundColor: 'rgba(29,185,84,0.85)',
+	},
+	hover: {
+		backgroundColor: [
+			'rgba(29,185,84,0.85)',
+			'rgba(255,204,92,0.85)',
+			'rgba(105,48,255,0.85)',
+			'rgba(201,18,120,0.85)',
+			'rgba(29,185,84,0.85)',
+		],
 		transition: {
-			type: 'easeInOut',
-			delay: 1,
-			duration: 0.75,
+			duration: 2,
+			repeat: 1,
+			repeatType: 'reverse',
 		},
 	},
 };

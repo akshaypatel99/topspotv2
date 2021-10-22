@@ -170,7 +170,7 @@ export const savePlaylist = async (timeRange, playlistURIs, userId) => {
 		return;
 	}
 
-	const access_token = getAccessToken();
+	const access_token = await getAccessToken();
 
 	const headers = {
 		Authorization: `Bearer ${access_token}`,

@@ -1,9 +1,8 @@
-import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { RiHome5Fill, RiLogoutBoxLine } from 'react-icons/ri';
 import { logout } from '../helpers/spotify';
 
-const NavBar = () => {
+function NavBar() {
 	let history = useHistory();
 
 	function logoutHandler() {
@@ -61,6 +60,6 @@ const NavBar = () => {
 			</div>
 		</nav>
 	);
-};
+}
 
 export default NavBar;

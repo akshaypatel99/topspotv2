@@ -1,19 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import { fetchWithToken } from '../helpers/spotify';
-import { TOP_ARTISTS_ENDPOINT } from '../constants/endpoints';
-import { sortTopArtists } from '../helpers/sortData';
-import Card from '../components/Card';
-import Loader from '../components/Loader';
-import NavBar from '../components/NavBar';
-import ScrollTopArrow from '../components/ScrollTopArrow';
 import { motion } from 'framer-motion';
-import { containerVariants } from '../helpers/animate';
 import { RiListOrdered } from 'react-icons/ri';
-import Table from '../components/Table';
-import TimeRange from '../components/TimeRange';
+import { TOP_ARTISTS_ENDPOINT } from '../constants/endpoints';
+import { fetchWithToken } from '../helpers/spotify';
+import { sortTopArtists } from '../helpers/sortData';
+import { containerVariants } from '../helpers/animate';
 import { IntersectionObserver } from '../components/IntersectionObserver';
+import NavBar from '../components/NavBar';
+import Loader from '../components/Loader';
+import TimeRange from '../components/TimeRange';
+import Card from '../components/Card';
+import Table from '../components/Table';
+import ScrollTopArrow from '../components/ScrollTopArrow';
 
 function TopArtists() {
 	const [timeRange, setTimeRange] = useState('medium_term');

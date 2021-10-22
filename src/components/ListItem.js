@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { hoverVariants } from '../helpers/animate';
 
-const ListItem = ({ number, image, data1, data2 }) => {
+function ListItem({ number, image, data1, data2 }) {
 	return (
 		<motion.div
 			className='ListItem'
@@ -23,6 +23,6 @@ const ListItem = ({ number, image, data1, data2 }) => {
 			<div className='bottom-line'></div>
 		</motion.div>
 	);
-};
+}
 
 export default ListItem;

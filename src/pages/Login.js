@@ -20,6 +20,12 @@ function Login() {
 					<span>TOP</span>Spot
 				</h1>
 			</div>
+			<div className='Login__Intro'>
+				<p>
+					Ever wondered who are your most listened to artists and tracks on
+					Spotify? Click the link below to login and find out.
+				</p>
+			</div>
 
 			<div className='Login__Link'>
 				<button

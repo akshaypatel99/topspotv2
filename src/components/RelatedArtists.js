@@ -2,7 +2,7 @@ import { useQuery } from 'react-query';
 import { fetchWithToken } from '../helpers/spotify';
 import { RELATED_ARTISTS_ENDPOINT } from '../constants/endpoints';
 
-const RelatedArtists = ({ id }) => {
+function RelatedArtists({ id }) {
 	let spotifyUrl = `${RELATED_ARTISTS_ENDPOINT}/${id}/related-artists`;
 
 	const { data: relArtists, status } = useQuery(
@@ -35,6 +35,6 @@ const RelatedArtists = ({ id }) => {
 			)}
 		</div>
 	);
-};
+}
 
 export default RelatedArtists;
