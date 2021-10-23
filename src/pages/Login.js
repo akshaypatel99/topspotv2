@@ -21,10 +21,11 @@ function Login() {
 				</h1>
 			</div>
 			<div className='Login__Intro'>
-				<p>
+				<p className='my-half'>
 					Ever wondered who are your most listened to artists and tracks on
-					Spotify? Click the link below to login and find out.
+					Spotify?
 				</p>
+				<p className='my-half'>Click the link below to login and find out.</p>
 			</div>
 
 			<div className='Login__Link'>
