@@ -11,7 +11,8 @@
 	&__Header {
 		text-align: left;
 		width: 90%;
-		margin: 1.5rem auto;
+		height: 20vh;
+		margin: 0 auto;
 
 		&__Image {
 			img {
@@ -62,6 +63,7 @@
 		&__Header {
 			text-align: left;
 			width: 100%;
+			height: 25vh;
 
 			&__Image {
 				margin-left: 2rem;
