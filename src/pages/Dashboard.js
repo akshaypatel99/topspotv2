@@ -26,7 +26,7 @@ function Dashboard() {
 				animate='visible'
 			>
 				<div className='Dashboard__Wrapper flex center mt-4'>
-					<div className='Dashboard__Header flex center mt-2'>
+					<div className='Dashboard__Header flex center'>
 						{status === 'loading' ? (
 							<Loader />
 						) : status === 'error' ? (
@@ -37,7 +37,7 @@ function Dashboard() {
 									<img src={user?.images[0].url} alt='Profile' />
 								</div>
 
-								<div className='Dashboard__Header__Intro flex ml-2'>
+								<div className='Dashboard__Header__Intro flex'>
 									<a
 										href={user?.external_urls.spotify}
 										target='_blank'

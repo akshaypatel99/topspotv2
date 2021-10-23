@@ -1,3 +1,9 @@
+// Redirect URI
+const redirectUri =
+	process.env.NODE_ENV === 'production'
+		? 'https //topspot-react.netlify.app/callback'
+		: 'http://localhost:3000/callback';
+
 // Generate random values
 function randomBytes(size) {
 	return crypto.getRandomValues(new Uint8Array(size));
@@ -46,7 +52,7 @@ export async function beginLogin() {
 	const params = new URLSearchParams({
 		client_id: 'b0f462aff74f4733b5613cac9273d9af',
 		response_type: 'code',
-		redirect_uri: 'https://topspot-react.netlify.app/callback',
+		redirect_uri: redirectUri,
 		code_challenge_method: 'S256',
 		code_challenge: await generateCodeChallenge(code_verifier),
 		state: state,
@@ -84,7 +90,7 @@ export async function completeLogin() {
 	await createAccessToken({
 		grant_type: 'authorization_code',
 		code: params.get('code'),
-		redirect_uri: `https://topspot-react.netlify.app/callback`,
+		redirect_uri: redirectUri,
 		code_verifier: code_verifier,
 	});
 }

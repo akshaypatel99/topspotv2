@@ -1,5 +1,5 @@
 // Variables
-$website-width: 1200px;
+$website-width: 1000px;
 $spotify-color: #1db954;
 $primary-color: #ffcc5c;
 $secondary-color: #c91278;
@@ -14,22 +14,9 @@ $font-color-primary: #fff;
 
 // Fonts
 @font-face {
-	font-family: 'Proxima Nova';
-	src: local('Proxima Nova'),
-		url(../fonts/ProximaNovaRegular.otf) format('opentype');
-}
-
-@font-face {
 	font-family: 'Proxima Nova Bold';
 	src: local('Proxima Nova Bold'),
 		url(../fonts/ProximaNovaBold.otf) format('opentype');
-}
-
-// Set Text Color
-@function set-text-color($color) {
-	@if (lightness($color) > 50) {
-		@return $dark-color;
-	} @else {
-		@return #fff;
-	}
+	font-weight: 700;
+	font-style: bold;
 }

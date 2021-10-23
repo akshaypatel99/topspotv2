@@ -11,7 +11,7 @@ function NavBar() {
 	}
 
 	return (
-		<nav id='navbar' className='NavBar flex py-1'>
+		<nav id='navbar' className='NavBar flex py-half'>
 			<div className='NavBar__Menu'>
 				<ul className='flex'>
 					<li>

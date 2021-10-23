@@ -1,7 +1,7 @@
 .ScrollTop {
 	position: fixed;
-	right: 45px;
-	bottom: 20px;
+	right: 30px;
+	bottom: 12px;
 	font-size: 2rem;
 	z-index: 1000;
 	cursor: pointer;
@@ -22,13 +22,5 @@
 	}
 	100% {
 		opacity: 0.5;
-	}
-}
-
-@media (max-width: 500px) {
-	.ScrollTop {
-		right: 20px;
-		bottom: 20px;
-		font-size: 1.5rem;
 	}
 }

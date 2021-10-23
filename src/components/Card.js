@@ -30,14 +30,14 @@ function Card({
 				<div className='Card__Image flex center'>
 					<img src={image} alt='artist' className='flex center' />
 				</div>
-				<div className='Card__Body flex center mt-2 mb-1'>
+				<div className='Card__Body flex center my-1'>
 					<div className='Card__Body__Number'>
 						<h2>
 							{String.fromCharCode(8212)} {number + 1}{' '}
 							{String.fromCharCode(8212)}
 						</h2>
 					</div>
-					<div className='Card__Body__Title mt-1 mb-2'>
+					<div className='Card__Body__Title my-1'>
 						<a href={spotifyUrl} target='_blank' rel='noreferrer'>
 							<h1>{name}</h1>
 						</a>
@@ -50,7 +50,7 @@ function Card({
 					<div className='Card__Body__Genres my-half'>
 						<h4>Genres: </h4>
 						{genre1 && (
-							<div className='badge1 my-1'>
+							<div className='badge1'>
 								<motion.span variants={genreVariants} whileHover='hover'>
 									{genre1}
 								</motion.span>
