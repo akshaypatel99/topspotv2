@@ -7,7 +7,9 @@ function NavBar() {
 
 	function logoutHandler() {
 		logout();
-		history.replace('/login');
+		setTimeout(() => {
+			history.replace('/login');
+		}, 2000);
 	}
 
 	return (

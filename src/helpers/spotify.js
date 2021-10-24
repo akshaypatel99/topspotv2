@@ -1,7 +1,7 @@
 // Redirect URI
 const redirectUri =
 	process.env.NODE_ENV === 'production'
-		? 'https //topspot-react.netlify.app/callback'
+		? 'https://topspot-react.netlify.app/callback'
 		: 'http://localhost:3000/callback';
 
 // Generate random values
