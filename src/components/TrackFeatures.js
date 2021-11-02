@@ -1,5 +1,4 @@
-import { useQuery } from 'react-query';
-import { fetchWithToken } from '../helpers/spotify';
+import { useFetch } from '../helpers/useFetch';
 import { TRACK_FEATURES_ENDPOINT } from '../constants/endpoints';
 import { IntersectionObserver } from './IntersectionObserver';
 import ProgressBar from './ProgressBar';
@@ -7,13 +6,7 @@ import ProgressBar from './ProgressBar';
 function TrackFeatures({ id }) {
 	let spotifyUrl = `${TRACK_FEATURES_ENDPOINT}/${id}`;
 
-	const { data: features, status } = useQuery(
-		['track_features', spotifyUrl],
-		() => fetchWithToken(spotifyUrl),
-		{
-			enabled: !!id,
-		}
-	);
+	const { data: features, status } = useFetch('track_features', spotifyUrl, id);
 
 	return (
 		<div className='TrackFeatures'>

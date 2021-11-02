@@ -19,6 +19,7 @@ function NavBar() {
 					<li>
 						<NavLink
 							to='/dashboard'
+							aria-label='Dashboard'
 							exact
 							activeStyle={{
 								borderColor: '#1db954',
@@ -31,6 +32,7 @@ function NavBar() {
 						<NavLink
 							to=''
 							exact
+							aria-label='Log out'
 							activeStyle={{
 								borderColor: '#1db954',
 							}}

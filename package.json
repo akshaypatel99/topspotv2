@@ -41,5 +41,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react-hooks": "^7.0.2",
+    "install": "^0.13.0",
+    "npm": "^8.1.2"
   }
 }

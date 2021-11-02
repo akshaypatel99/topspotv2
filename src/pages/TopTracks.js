@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useQuery } from 'react-query';
+
 import useUser from '../helpers/useUser';
 import { motion } from 'framer-motion';
 import { TOP_TRACKS_ENDPOINT } from '../constants/endpoints';
-import { fetchWithToken, savePlaylist } from '../helpers/spotify';
+import { useFetch } from '../helpers/useFetch';
+import { savePlaylist } from '../helpers/spotify';
 import { sortTopTracks, filterTrackUri } from '../helpers/sortData';
 import { containerVariants } from '../helpers/animate';
 import { IntersectionObserver } from '../components/IntersectionObserver';
@@ -34,9 +35,7 @@ function TopTracks() {
 		status,
 		error,
 		isFetching,
-	} = useQuery(['top_tracks', spotifyUrl], () => fetchWithToken(spotifyUrl), {
-		enabled: !!timeRange,
-	});
+	} = useFetch('top_tracks', spotifyUrl, timeRange);
 
 	useEffect(() => {
 		if (error) {
@@ -124,7 +123,10 @@ function TopTracks() {
 								</IntersectionObserver>
 							))}
 						<div ref={scrollTableRef} className='py-3'></div>
-						<div className='TopTracks__Content__Table'>
+						<div
+							className='TopTracks__Content__Table'
+							data-testid='tracks-table'
+						>
 							<h1 className='mb-2'>
 								<span>All</span>Tracks
 							</h1>

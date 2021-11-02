@@ -33,7 +33,7 @@ function TrackCard({ number, id, name, artist, image, uri, showMedia }) {
 							referrerPolicy='no-referrer'
 						></iframe>
 					) : (
-						<img src={image} alt='album art' />
+						<img src={image} alt={name} />
 					)}
 				</div>
 				<div className='TrackCard__Body flex center'>
@@ -42,7 +42,10 @@ function TrackCard({ number, id, name, artist, image, uri, showMedia }) {
 						<div className='bottom-line-short'></div>
 						<h2>{artist}</h2>
 					</div>
-					<div className='TrackCard__Body__Features my-1'>
+					<div
+						className='TrackCard__Body__Features my-1'
+						data-testid='tracks-features'
+					>
 						<TrackFeatures id={id} />
 					</div>
 				</div>

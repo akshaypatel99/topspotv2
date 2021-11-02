@@ -28,7 +28,7 @@ function Card({
 		>
 			<div className='Card my-1 flex'>
 				<div className='Card__Image flex center'>
-					<img src={image} alt='artist' className='flex center' />
+					<img src={image} alt={name} className='flex center' />
 				</div>
 				<div className='Card__Body flex center my-1'>
 					<div className='Card__Body__Number'>

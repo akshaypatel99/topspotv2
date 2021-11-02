@@ -1,16 +1,13 @@
-import { useQuery } from 'react-query';
-import { fetchWithToken } from '../helpers/spotify';
+import { useFetch } from '../helpers/useFetch';
 import { RELATED_ARTISTS_ENDPOINT } from '../constants/endpoints';
 
 function RelatedArtists({ id }) {
 	let spotifyUrl = `${RELATED_ARTISTS_ENDPOINT}/${id}/related-artists`;
 
-	const { data: relArtists, status } = useQuery(
-		['related_artists', spotifyUrl],
-		() => fetchWithToken(spotifyUrl),
-		{
-			enabled: !!id,
-		}
+	const { data: relArtists, status } = useFetch(
+		'related_artists',
+		spotifyUrl,
+		id
 	);
 
 	return (

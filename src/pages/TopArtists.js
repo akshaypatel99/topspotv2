@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useQuery } from 'react-query';
 import { motion } from 'framer-motion';
 import { RiListOrdered } from 'react-icons/ri';
 import { TOP_ARTISTS_ENDPOINT } from '../constants/endpoints';
-import { fetchWithToken } from '../helpers/spotify';
+import { useFetch } from '../helpers/useFetch';
 import { sortTopArtists } from '../helpers/sortData';
 import { containerVariants } from '../helpers/animate';
 import { IntersectionObserver } from '../components/IntersectionObserver';
@@ -26,9 +25,7 @@ function TopArtists() {
 		status,
 		error,
 		isFetching,
-	} = useQuery(['top_artists', spotifyUrl], () => fetchWithToken(spotifyUrl), {
-		enabled: !!timeRange,
-	});
+	} = useFetch('top_artists', spotifyUrl, timeRange);
 
 	useEffect(() => {
 		if (error) {
@@ -93,7 +90,10 @@ function TopArtists() {
 								</IntersectionObserver>
 							))}
 						<div ref={scrollTableRef} className='py-3'></div>
-						<div className='TopArtists__Content__Table'>
+						<div
+							className='TopArtists__Content__Table'
+							data-testid='artists-table'
+						>
 							<h1 className='mb-2'>
 								<span>All</span>Artists
 							</h1>

@@ -19,7 +19,11 @@ function ScrollTopArrow() {
 	window.addEventListener('scroll', checkScrollTop);
 
 	return (
-		<button className='ScrollTop' onClick={scrollTop}>
+		<button
+			className='ScrollTop'
+			onClick={scrollTop}
+			aria-label='Scroll to top'
+		>
 			<BiArrowToTop size='32px' />
 		</button>
 	);
