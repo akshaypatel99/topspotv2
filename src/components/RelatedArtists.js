@@ -22,9 +22,14 @@ function RelatedArtists({ id }) {
 					<div className='RelatedArtists__Body flex'>
 						{relArtists.artists.slice(0, 2).map((artist, i) => {
 							return (
-								<span className='RelatedArtists__Item' key={i}>
-									{artist.name}
-								</span>
+								<a
+									key={i}
+									href={artist.external_urls.spotify}
+									target='_blank'
+									rel='noreferrer'
+								>
+									<span className='RelatedArtists__Item'>{artist.name}</span>
+								</a>
 							);
 						})}
 					</div>

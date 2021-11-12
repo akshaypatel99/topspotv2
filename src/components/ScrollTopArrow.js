@@ -23,6 +23,7 @@ function ScrollTopArrow() {
 			className='ScrollTop'
 			onClick={scrollTop}
 			aria-label='Scroll to top'
+			style={{ display: showScroll ? 'flex' : 'none' }}
 		>
 			<BiArrowToTop size='32px' />
 		</button>

@@ -20,7 +20,7 @@
 		&__Title {
 			a h1:hover {
 				transition: 0.3s;
-				opacity: 0.8;
+				color: rgba($primary-color, $alpha: 0.85);
 			}
 		}
 
@@ -29,8 +29,9 @@
 
 			.progress {
 				overflow: hidden;
+				margin: 0.25rem auto;
 				height: 0.5rem;
-				background: $light-color;
+				background: $light-medium-color;
 				border-radius: 5px;
 
 				div {
@@ -74,6 +75,10 @@
 					color: rgba($primary-color, $alpha: 0.85);
 					margin: 0 0.5rem;
 					font-size: 1.1rem;
+
+					&:hover {
+						color: rgba($primary-color, $alpha: 1);
+					}
 				}
 			}
 		}
