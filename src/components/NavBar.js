@@ -1,5 +1,5 @@
 import { NavLink, useHistory } from 'react-router-dom';
-import { RiHome5Fill, RiLogoutBoxLine } from 'react-icons/ri';
+import { RiHome5Fill, RiLogoutBoxLine, RiGithubFill } from 'react-icons/ri';
 import { logout } from '../helpers/spotify';
 
 function NavBar() {
@@ -20,6 +20,7 @@ function NavBar() {
 						<NavLink
 							to='/dashboard'
 							aria-label='Dashboard'
+							aria-roledescription='Link to Dashboard page'
 							exact
 							activeStyle={{
 								borderColor: '#1db954',
@@ -33,11 +34,26 @@ function NavBar() {
 							to=''
 							exact
 							aria-label='Log out'
+							aria-roledescription='Logout button'
 							activeStyle={{
 								borderColor: '#1db954',
 							}}
 						>
 							<RiLogoutBoxLine size='20px' />
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to='https://github.com/akshaypatel99'
+							aria-label='Github'
+							aria-roledescription='Link to Github repository'
+							activeStyle={{
+								borderColor: '#1db954',
+							}}
+							target='_blank'
+							rel='noreferrer'
+						>
+							<RiGithubFill color='white' size='22px' />
 						</NavLink>
 					</li>
 					<li>
