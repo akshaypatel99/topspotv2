@@ -11,7 +11,6 @@ const Callback = lazy(() => import('./pages/Callback'));
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const TopArtists = lazy(() => import('./pages/TopArtists'));
 const TopTracks = lazy(() => import('./pages/TopTracks'));
-const Footer = lazy(() => import('./components/Footer'));
 const Fallback = lazy(() => import('./components/Fallback'));
 
 function App() {
@@ -33,9 +32,6 @@ function App() {
 								{user ? <Redirect to='/dashboard' /> : <Redirect to='/login' />}
 							</Route>
 						</Switch>
-
-						{/* <Help /> */}
-						<Footer />
 					</Suspense>
 				</ErrorBoundary>
 			</div>
