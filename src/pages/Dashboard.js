@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { containerVariants, linkVariants } from '../helpers/animate';
+import { RiSpotifyFill } from 'react-icons/ri';
 import useUser from '../helpers/useUser';
 import NavBar from '../components/NavBar';
 import Loader from '../components/Loader';
@@ -34,7 +35,11 @@ function Dashboard() {
 						) : (
 							<>
 								<div className='Dashboard__Header__Image flex center'>
-									<img src={user?.images[0].url} alt='Profile' />
+									{user.images ? (
+										<img src={user?.images[0].url} alt='Profile' />
+									) : (
+										<RiSpotifyFill size='4em' />
+									)}
 								</div>
 
 								<div className='Dashboard__Header__Intro flex'>
