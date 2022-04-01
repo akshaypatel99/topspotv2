@@ -183,7 +183,7 @@ export const savePlaylist = async (timeRange, playlistURIs, userId) => {
 		'Content-Type': 'application/json',
 	};
 
-	const response = await fetch(
+	const createPlaylistResponse = await fetch(
 		`https://api.spotify.com/v1/users/${userId}/playlists`,
 		{
 			headers: headers,
@@ -191,11 +191,24 @@ export const savePlaylist = async (timeRange, playlistURIs, userId) => {
 			body: JSON.stringify({ name: name }),
 		}
 	);
-	const { id: playlist_id } = await response.json();
+	const { id: playlist_id } = await createPlaylistResponse.json();
 
-	return fetch(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, {
-		headers: headers,
-		method: 'POST',
-		body: JSON.stringify({ uris: playlistURIs }),
-	});
+	const updatePlaylistResponse = await fetch(
+		`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`,
+		{
+			headers: headers,
+			method: 'POST',
+			body: JSON.stringify({ uris: playlistURIs }),
+		}
+	);
+
+	if (updatePlaylistResponse.status !== 201) {
+		return {
+			message: 'Error creating playlist. Please try again.',
+		};
+	} else {
+		return {
+			message: 'Playlist created successfully!',
+		};
+	}
 };

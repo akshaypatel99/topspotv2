@@ -25,6 +25,7 @@ import {
 function TopTracks() {
 	const [timeRange, setTimeRange] = useState('medium_term');
 	const [showMedia, setShowMedia] = useState(false);
+	const [playlistResult, setPlaylistResult] = useState(null);
 	let history = useHistory();
 	const { user } = useUser();
 
@@ -43,9 +44,11 @@ function TopTracks() {
 		}
 	}, [error, history]);
 
-	function createPlaylistHandler() {
+	async function createPlaylistHandler() {
 		const playlistURIs = filterTrackUri(tracks);
-		savePlaylist(timeRange, playlistURIs, user.id);
+		const { message } = await savePlaylist(timeRange, playlistURIs, user.id);
+		setPlaylistResult(message);
+		setTimeout(() => setPlaylistResult(null), 5000);
 	}
 
 	const scrollTableRef = useRef(null);
@@ -94,6 +97,11 @@ function TopTracks() {
 							<RiAddCircleFill size='20px' /> Create Playlist
 						</button>
 					</div>
+					{playlistResult && (
+						<div className='TopTracks__Menu__Result flex center mx-auto'>
+							{playlistResult}
+						</div>
+					)}
 				</div>
 				{status === 'loading' ? (
 					<Loader />

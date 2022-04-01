@@ -28,6 +28,13 @@
 				}
 			}
 		}
+
+		&__Result {
+			background-color: $spotify-color;
+			padding: 0.75rem 2rem;
+			border-radius: 99px;
+			max-width: fit-content;
+		}
 	}
 
 	&__Content__Table {
