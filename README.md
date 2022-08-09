@@ -1,8 +1,8 @@
 # TOPSpot
 
-**_Web app for Spotify Premium users to see their most listened to tracks and artists_**
+### **_Web app for Spotify Premium users to see their most listened to tracks and artists_**
 
-Check out the live site [**here**](https://tinyurl.com/topspot-spotify).
+#### Check out the live site [**here**](https://tinyurl.com/topspot-spotify).
 
 ## Project Overview
 
